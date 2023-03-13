@@ -5,63 +5,71 @@ var linkedin = "https://www.linkedin.com/in/forrestpknight/";
 var instagram = "https://www.instagram.com/forrestpknight/";
 var github = "https://github.com/forrestknight/";
 var email = 'mailto:forrest@fkcodes.com';
-
+hardinfo = [
+"SERN@server",
+"------------",
+"Arch: 80486SX",
+"Host: IBN 5100",
+"Kernel: IBN 0.0.12",
+"Uptime: 170530 days, 8 hours, 6 mins",
+"Terminal: lxterminal",
+"Terminal Font: consolas",
+"CPU: IBN PALM 1.9 MHz",
+"Memory: 571b / 62034b",
+"Storage: IBN FlashSystem 5100"
+];
 whois = [
-  "<br>",
-  "Hey, I'm Forrest!👋",
-  "I'm a software developer and content creator, who builds engaging websites like this one",
-  "and makes YouTube videos about computer science & software engineering.",
-  "After graduating with a Bachelor's in Computer Science, I worked professionally",
-  "as a software engineer building enterprise web applications for Fortune 500 companies.",
-  "While doing all of that, I documentned my coding journey on YouTube - trying to enlighten",
-  "the next generation of developers and help them navigate the crazy world that is software", "development & computer science.",
-  "Before I knew it, that online presence took on a life of its own, to the point where I knew",
-  "I needed to make the jump from software engineering to full time content creator, and it's",
-  "the best decision I ever made.",
-  "Now, I make videos about creating cool shit like this terminal website, and hosting my",
-  "podcast 'Decoded w/ Forrest Knight.' What most people don't know, and will only know",
-  "because they're reading this right now, is that I also run a creative & media agency.",
-  "We partner with clients to drive their business outcomes using modern marketing strategies.",
-  "<br>"
+
+  "Initiating worldline scan...",
+"Locating domain registry...",
+"Domain registration details found:",
+"Domain name: chronotech.net",
+"Owner: SERN Research Division",
+"Registrant contact email: contact@sern-chronotech.net",
+"Registrar: Network Solutions, LLC",
+"Registration date: 2011-04-06",
+"The timeline remains unchanged.",
+
 ];
 
 whoami = [
-  "<br>",
-  "The paradox of “Who am I?” is: we never know, but, we constantly find out.",
-  "<br>"
+
+  "evident",
+
 ];
 
 social = [
-  "<br>",
+
   'youtube        <a href="' + youtube + '" target="_blank">youtube/fknight' + "</a>",
   'twitter        <a href="' + twitter + '" target="_blank">twitter/forrestpknight' + '</a>',
   'linkedin       <a href="' + linkedin + '" target="_blank">linkedin/forrestpknight' + "</a>",
   'instagram      <a href="' + instagram + '" target="_blank">instagram/forrestpknight' + '</a>',
   'github         <a href="' + github + '" target="_blank">github/forrestknight' + "</a>",
-  "<br>"
+
 ];
 
 secret = [
-  "<br>",
-  '<span class="command">sudo</span>           Only use if you\'re admin',
-  "<br>"
+
+  'you now have access to [NAME] database [DESCRIPTION] connects to database',
+
 ];
 
 projects = [
-  "<br>",
+
   "Still curating... most projects are offline, on GitHub, or confidential.",
-  "<br>"
+
 ];
 
 help = [
-  "<br>",
+
   '<span class="command">[NAME] whoami</span> - [DESCRIPTION] user info',
   '<span class="command">[NAME] su</span> - [DESCRIPTION] root user auth',
   '<span class="command">[NAME] ls</span> - [DESCRIPTION] list directories',
   '<span class="command">[NAME] clear</span> - [DESCRIPTION] clear terminal',
   '<span class="command">[INPUT] ARROW_KEY_UP | ARROW KEY DOWN</span> - [DESCRIPTION] scroll through command history',
   '<span class="command">[NAME] history</span> - [DESCRIPTION] list command history',
-  "<br>",
+  '<span class="command">[NAME] spec</span> - [DESCRIPTION] specifications',
+
 ];
 
 banner = [

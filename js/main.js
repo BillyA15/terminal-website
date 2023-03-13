@@ -4,17 +4,21 @@ var command = document.getElementById("typer");
 var textarea = document.getElementById("texter"); 
 var terminal = document.getElementById("terminal");
 
+const VOLUME_MUTE = 181;
+const ENTER_KEY = 13;
+const ARROW_UP = 38;
+const ARROW_DOWN = 40;
+
 var git = 0;
-var pw = false;
-let pwd = false;
+var fillPasswordEnabled = false;
+let correctPassword = false;
 var commands = [];
+var isRoot = false;
 
 setTimeout(function() {
   loopLines(banner, "", 100);
   textarea.focus();
 }, 100);
-
-window.addEventListener("keyup", enterKey);
 
 console.log(
   "%cYou hacked my password!😠",
@@ -26,36 +30,50 @@ console.log("%cPassword: '" + password + "' - I wonder what it does?🤔", "colo
 textarea.value = "";
 command.innerHTML = textarea.value;
 
+window.addEventListener("keyup", enterKey);
+
+function isPassword(){
+  if (textarea.value.replace(/(\r\n|\n|\r)/gm, "") === password) {
+    isRoot = true;
+    return true;
+  }
+  return false;
+}
+
+function getUser(){
+
+  if(isRoot){
+    return "root@Evident#>";
+  }
+  return "evident@Evident~$>";
+
+}
+
 function enterKey(e) {
-  if (e.keyCode == 181) {
+  if (e.keyCode == VOLUME_MUTE) {
     document.location.reload(true);
   }
-  if (pw) {
+  if (fillPasswordEnabled) {
     let et = "*";
     let w = textarea.value.length;
     command.innerHTML = et.repeat(w);
-    if (textarea.value === password) {
-      pwd = true;
-    }
-    if (pwd && e.keyCode == 13) {
-      loopLines(secret, "color2 margin", 120);
+    if (e.keyCode == ENTER_KEY) {
+      if (isPassword()){
+        loopLines(secret, "color2 margin", 120);
+        document.getElementById("liner").setAttribute("data-text", getUser());
+      }else{
+        addLine("Wrong password", "error", 0);
+      }
       command.innerHTML = "";
       textarea.value = "";
-      pwd = false;
-      pw = false;
-      liner.classList.remove("password");
-    } else if (e.keyCode == 13) {
-      addLine("Wrong password", "error", 0);
-      command.innerHTML = "";
-      textarea.value = "";
-      pw = false;
+      fillPasswordEnabled = false;
       liner.classList.remove("password");
     }
   } else {
-    if (e.keyCode == 13) {
+    if (e.keyCode == ENTER_KEY) {
       commands.push(command.innerHTML);
       git = commands.length;
-      addLine("root@evident~$> " + command.innerHTML, "no-animation", 0);//todo make variable for username
+      addLine(getUser()+ " " + command.innerHTML, "no-animation", 0);//todo make variable for username
       console.log(command.innerHTML);
       commander(command.innerHTML.toLowerCase());
       command.innerHTML = "";
@@ -94,17 +112,17 @@ function commander(cmd) {
       newTab(youtube);
       break;
     case "sudo":
-      addLine("Oh no, you're not admin...", "color2", 80);
+      addLine("/etc/sudoers not found", "color2", 80);/*
       setTimeout(function() {
         window.open('https://www.youtube.com/watch?v=dQw4w9WgXcQ');
-      }, 1000); 
+      }, 1000); */
       break;
     case "social":
       loopLines(social, "color2 margin", 80);
       break;
-    case "secret":
+    case "su":
       liner.classList.add("password");
-      pw = true;
+      fillPasswordEnabled = true;
       break;
     case "projects":
       loopLines(projects, "color2 margin", 80);
@@ -118,8 +136,7 @@ function commander(cmd) {
       addLine("<br>", "command", 80 * commands.length + 50);
       break;
     case "email":
-      addLine('Opening mailto:<a href="mailto:forrest@fkcodes.com">forrest@fkcodes.com</a>...', "color2", 80);
-      newTab(email);
+      addLine('rotitNhoj@dmail.com', "color2", 80);
       break;
     case "clear":
       setTimeout(function() {
@@ -150,6 +167,19 @@ function commander(cmd) {
     case "github":
       addLine("Opening GitHub...........................................................................................................................", "color2", 0);
       
+      break;
+    case "database":
+      if (!isRoot) {
+        commander("default");
+        break;
+      }
+      addLine("Accessing Database...", "color2", 0);
+      setTimeout(function() {
+        window.open('https://www.youtube.com/watch?v=dQw4w9WgXcQ');
+      }, 1000);
+      break;
+    case "spec":
+      loopLines(hardinfo, "", 100);
       break;
     default:
       addLine("<span class=\"inherit\">Command not found. For a list of commands, type <span class=\"command\">'help'</span>.</span>", "error", 0);

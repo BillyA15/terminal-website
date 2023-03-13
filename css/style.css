@@ -16,6 +16,7 @@ body {
   color: var(--main-text-color);
   background: #0a0601;
   font-family: cursor, monospace;
+  letter-spacing: 0.05em;
   overflow-x: hidden;
   text-shadow: 0px 0px 2px var(--main-text-glow-color),
   0px 0px 5px var(--main-text-glow-color);
@@ -81,13 +82,13 @@ b {
 #liner {
   line-height: 1.3em;
   margin-top: -2px;
-  animation: show 0.5s ease forwards;
-  animation-delay: 1.2s;
+  animation: show 0.2s ease forwards;
+  animation-delay: 2.5s;
   opacity: 0;
 }
 #liner::before {
   color: var(--main-text-color);
-  content: "root@evident~$>";
+  content: attr(data-text);
 }
 #liner.password::before {
   content: "Password:";
@@ -108,7 +109,7 @@ p {
   overflow: hidden;
   white-space: nowrap;
   margin: 0;
-  letter-spacing: 0.05em;
+  /*letter-spacing: 0.05em;*/
   animation: typing 0.2s steps(30, end);
 }
 .no-animation {
