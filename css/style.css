@@ -1,0 +1,158 @@
+:root {
+  --main-text-color: #fe9c23;
+  --main-text-glow-color: #fe9c23;
+  --main-bg-color: #0a0601;
+  --main-bg-selection-color: #ffb459;
+  --main-error-color: #ffbf70;
+}
+
+
+body {
+  margin: 0;
+  padding: 15px 20px;
+  min-height: 99%;
+  width: 100%;
+  min-width: 550px;
+  color: var(--main-text-color);
+  background: #0a0601;
+  font-family: cursor, monospace;
+  overflow-x: hidden;
+  text-shadow: 0px 0px 2px var(--main-text-glow-color),
+  0px 0px 5px var(--main-text-glow-color);
+ 
+}
+::selection {
+  color: var(--main-bg-color);
+  background-color: var(--main-bg-selection-color);
+  text-shadow: none;
+}
+::-moz-selection {
+  color: var(--main-bg-color);
+  background-color: var(--main-bg-selection-color);
+  text-shadow: none;
+}
+textarea {
+  left: 0px;
+  position: absolute;
+  /*hide the textarea but keep it in the DOM*/
+  opacity: 0;
+ /*make the text area cover the whole screen*/
+
+  /*make the text area behind the text*/
+
+
+
+}
+b {
+  font-weight: bold;
+  text-decoration: underline;
+}
+/* Cursor Start *//*
+.cursor {
+  font-size: 12px;
+  color: var(--main-text-color);
+  background-color: var(--main-text-color);
+  position: relative;
+  opacity: 1;
+  height: 0.3em;
+  width: 10px;
+  max-width: 10px;
+  transform: translateY(4px);
+  overflow: hidden;
+  text-indent: -5px;
+  display: inline-block;
+  text-decoration: blink;
+  animation: blinker 1s linear infinite;
+}*/
+.cursor{
+  position: relative;
+  animation: blinker 1s linear infinite;
+}
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}
+#command {
+  cursor: text;
+  height: 50px;
+  color: var(--main-text-color);
+}
+#liner {
+  line-height: 1.3em;
+  margin-top: -2px;
+  animation: show 0.5s ease forwards;
+  animation-delay: 1.2s;
+  opacity: 0;
+}
+#liner::before {
+  color: var(--main-text-color);
+  content: "root@evident~$>";
+}
+#liner.password::before {
+  content: "Password:";
+}
+@keyframes show {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+/* Cursor End */
+p {
+  display: block;
+  line-height: 1.3em;
+  margin: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  margin: 0;
+  letter-spacing: 0.05em;
+  animation: typing 0.2s steps(30, end);
+}
+.no-animation {
+  animation: typing 0 steps(30, end);
+}
+.margin {
+  margin-left: 0px;
+}
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+.index {
+  color: var(--main-text-color);
+}
+.color2 {
+  color: var(--main-text-color);
+}
+.command {
+  color: var(--main-text-color);
+}
+.error {
+  color: var(--main-bg-selection-color);
+  /*background-color: var(--main-bg-selection-color);*/
+  display:inline;
+}
+.white {
+  color: #fff;
+}
+.inherit,
+a {
+  color: var(--main-error-color);
+}
+a {
+  text-decoration: inherit;
+}
+a:hover {
+  background: var(--main-bg-selection-color);
+  color: var(--main-bg-color);
+}
+a:focus {
+  outline: 0;
+}
