@@ -1,6 +1,6 @@
 var youtube = "https://www.youtube.com/fknight/";
 var twitter = "https://www.twitter.com/forrestpknight/";
-var password = "fkcodes";
+var password = "el psy congroo";
 var linkedin = "https://www.linkedin.com/in/forrestpknight/";
 var instagram = "https://www.instagram.com/forrestpknight/";
 var github = "https://github.com/forrestknight/";
@@ -29,6 +29,13 @@ whois = [
 "Registrar: Network Solutions, LLC",
 "Registration date: 2011-04-06",
 "The timeline remains unchanged.",
+
+];
+
+ls = [
+
+  "1st_design/   @channel/          company_welcome.txt*     operation_skuld/",
+  "mail-system/            FutureGadgetLab/   phone_wave/         gate_theory/",
 
 ];
 
@@ -69,6 +76,7 @@ help = [
   '<span class="command">[INPUT] ARROW_KEY_UP | ARROW KEY DOWN</span> - [DESCRIPTION] scroll through command history',
   '<span class="command">[NAME] history</span> - [DESCRIPTION] list command history',
   '<span class="command">[NAME] spec</span> - [DESCRIPTION] specifications',
+  '<span class="command">[NAME] cd [FOLDER_NAME|FILE_NAME]</span> - [DESCRIPTION] goto directory or file',
 
 ];
 

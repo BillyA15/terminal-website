@@ -21,10 +21,9 @@ setTimeout(function() {
 }, 100);
 
 console.log(
-  "%cYou hacked my password!😠",
-  "color: #04ff00; font-weight: bold; font-size: 24px;"
+  "%csegmeПƬΛƬIӨП FΛЦᄂD (ᄃӨЯΣ DЦMPΣD)",
+  "color: red; font-weight: bold; font-size: 14px;"
 );
-console.log("%cPassword: '" + password + "' - I wonder what it does?🤔", "color: grey");
 
 //init
 textarea.value = "";
@@ -97,38 +96,46 @@ function enterKey(e) {
 }
 
 function commander(cmd) {
+  //split command in space
+  cd = cmd.split(" ")[0];
+  if (cd === "cd"){
+    if(!isRoot){
+      addLine("default user has no cd permissions, auth: su", "error", 0);
+    }
+    else{
+      setTimeout(function() {
+        window.open('https://www.youtube.com/watch?v=dQw4w9WgXcQ');
+      }, 1000);
+   
+    }
+    return;
+  }
+  
+
+
   switch (cmd.toLowerCase()) {
     case "help":
-      loopLines(help, "color2 margin", 80);
+      loopLines(help, "output", 80);
       break;
     case "whois":
-      loopLines(whois, "color2 margin", 80);
+      loopLines(whois, "output", 80);
       break;
     case "whoami":
-      loopLines(whoami, "color2 margin", 80);
+      loopLines(whoami, "output", 80);
       break;
     case "video":
       addLine("Opening YouTube...", "color2", 80);
       newTab(youtube);
       break;
     case "sudo":
-      addLine("/etc/sudoers not found", "color2", 80);/*
+      addLine("/etc/sudoers not found", "output", 80);/*
       setTimeout(function() {
         window.open('https://www.youtube.com/watch?v=dQw4w9WgXcQ');
       }, 1000); */
       break;
-    case "social":
-      loopLines(social, "color2 margin", 80);
-      break;
     case "su":
       liner.classList.add("password");
       fillPasswordEnabled = true;
-      break;
-    case "projects":
-      loopLines(projects, "color2 margin", 80);
-      break;
-    case "password":
-      addLine("<span class=\"inherit\"> Lol! You're joking, right? You\'re gonna have to try harder than that!😂</span>", "error", 100);
       break;
     case "history":
       addLine("<br>", "", 0);
@@ -144,30 +151,6 @@ function commander(cmd) {
         before = document.getElementById("before");
       }, 1);
       break;
-    case "banner":
-      loopLines(banner, "", 2000);
-      break;
-    // socials
-    case "youtube":
-      addLine("Opening YouTube...", "color2", 80);
-      newTab(youtube);
-      break;
-    case "twitter":
-      addLine("Opening Twitter...", "color2", 0);
-      newTab(twitter);
-      break;
-    case "linkedin":
-      addLine("Opening LinkedIn...", "color2", 0);
-      newTab(linkedin);
-      break;
-    case "instagram":
-      addLine("Opening Instagram...", "color2", 0);
-      newTab(instagram);
-      break;
-    case "github":
-      addLine("Opening GitHub...........................................................................................................................", "color2", 0);
-      
-      break;
     case "database":
       if (!isRoot) {
         commander("default");
@@ -179,10 +162,13 @@ function commander(cmd) {
       }, 1000);
       break;
     case "spec":
-      loopLines(hardinfo, "", 100);
+      loopLines(hardinfo, "output", 100);
+      break;
+    case "ls":
+      loopLines(ls, "output", 100);
       break;
     default:
-      addLine("<span class=\"inherit\">Command not found. For a list of commands, type <span class=\"command\">'help'</span>.</span>", "error", 0);
+      addLine("<span class=\"inherit\">Unrecognized Command "+cmd+". try <span class=\"command\">'help'</span>.</span>", "error", 0);
       break;
   }
 }

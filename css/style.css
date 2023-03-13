@@ -140,6 +140,9 @@ p {
   /*background-color: var(--main-bg-selection-color);*/
   display:inline;
 }
+.output {
+  color: var(--main-bg-selection-color);
+}
 .white {
   color: #fff;
 }
