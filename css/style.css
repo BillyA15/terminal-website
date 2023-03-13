@@ -8,6 +8,9 @@
 
 
 body {
+
+  
+
   margin: 0;
   padding: 15px 20px;
   min-height: 99%;
@@ -20,6 +23,15 @@ body {
   overflow-x: hidden;
   text-shadow: 0px 0px 2px var(--main-text-glow-color),
   0px 0px 5px var(--main-text-glow-color);
+  
+  background-color: black;
+  background-image: radial-gradient(ellipse at 25% 50%,
+    #492b0b, black 100%
+  );
+  /*492b0b       72583b*/
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  height: 70vh;
  
 }
 ::selection {

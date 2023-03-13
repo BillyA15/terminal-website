@@ -1,10 +1,5 @@
-var youtube = "https://www.youtube.com/fknight/";
-var twitter = "https://www.twitter.com/forrestpknight/";
-var password = "el psy congroo";
-var linkedin = "https://www.linkedin.com/in/forrestpknight/";
-var instagram = "https://www.instagram.com/forrestpknight/";
-var github = "https://github.com/forrestknight/";
-var email = 'mailto:forrest@fkcodes.com';
+var password = "el psy kongroo";
+
 hardinfo = [
 "SERN@server",
 "------------",
@@ -34,7 +29,7 @@ whois = [
 
 ls = [
 
-  "1st_design/   @channel/          company_welcome.txt*     operation_skuld/",
+  "1st_design/   @channel/          company_welcome.txt*     skuld-files/",
   "mail-system/            FutureGadgetLab/   phone_wave/         gate_theory/",
 
 ];
@@ -42,16 +37,6 @@ ls = [
 whoami = [
 
   "evident",
-
-];
-
-social = [
-
-  'youtube        <a href="' + youtube + '" target="_blank">youtube/fknight' + "</a>",
-  'twitter        <a href="' + twitter + '" target="_blank">twitter/forrestpknight' + '</a>',
-  'linkedin       <a href="' + linkedin + '" target="_blank">linkedin/forrestpknight' + "</a>",
-  'instagram      <a href="' + instagram + '" target="_blank">instagram/forrestpknight' + '</a>',
-  'github         <a href="' + github + '" target="_blank">github/forrestknight' + "</a>",
 
 ];
 
@@ -69,7 +54,8 @@ projects = [
 
 help = [
 
-  '<span class="command">[NAME] whoami</span> - [DESCRIPTION] user info',
+  '<span class="command">[NAME] whoami</span> - [DESCRIPTION] user information',
+  '<span class="command">[NAME] whois</span> - [DESCRIPTION] domain specification',
   '<span class="command">[NAME] su</span> - [DESCRIPTION] root user auth',
   '<span class="command">[NAME] ls</span> - [DESCRIPTION] list directories',
   '<span class="command">[NAME] clear</span> - [DESCRIPTION] clear terminal',
@@ -84,9 +70,9 @@ banner = [
   "soc_vref_reg_value 0x 00000019 0000001b 00000018 0000001b 0000001a 0000001b 0000001a 0000001a 0000001b 0000001c",
   "0000001a 0000001b 0000001b 0000001a 00000019 0000001b 0000001e 0000001b 0000001d 0000001b 0000001b 0000001c 0000001b",
   "0000001d 0000001d 0000001c 0000001b 0000001c 0000001b 0000001c 0000001b 0000001d dram_vref_reg_value 0x 0000004f",
-"auto size-- 65535DDR cs0 size: 48MB",
+"auto size-- 65535DDR cs0 size: 48b",
 "DDR cs1 size: 0MB",
-"DMC_DDR_CTRL: 00c00054DDR size: 48MB",
+"DMC_DDR_CTRL: 00c00054DDR size: 48b",
 "cs0 DataBus test pass",
 "cs0 AddrBus test pass",
 "non-sec scramble use random key",
