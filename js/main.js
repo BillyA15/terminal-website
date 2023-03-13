@@ -20,11 +20,6 @@ setTimeout(function() {
   textarea.focus();
 }, 100);
 
-console.log(
-  "%csegmeПƬΛƬIӨП FΛЦᄂD (ᄃӨЯΣ DЦMPΣD)",
-  "color: red; font-weight: bold; font-size: 14px;"
-);
-
 //init
 textarea.value = "";
 command.innerHTML = textarea.value;
