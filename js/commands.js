@@ -1,4 +1,4 @@
-var password = "el psy kongroo";
+var password = "a";//"el psy kongroo";
 
 hardinfo = [
 "SERN@server",
@@ -29,8 +29,8 @@ whois = [
 
 ls = [
 
-  "1st_design/   @channel/          company_welcome.txt*     skuld-files/",
-  "mail-system/            FutureGadgetLab/   phone_wave/         gate_theory/",
+  "1st_design/   @channel/          company_welcome.txt*     skuld_files/",
+  "mail_system/            FutureGadgetLab/   phone_wave/         gate_theory/",
 
 ];
 
@@ -62,6 +62,8 @@ help = [
   '<span class="command">[INPUT] ARROW_KEY_UP | ARROW KEY DOWN</span> - [DESCRIPTION] scroll through command history',
   '<span class="command">[NAME] history</span> - [DESCRIPTION] list command history',
   '<span class="command">[NAME] spec</span> - [DESCRIPTION] specifications',
+  '<span class="command">[NAME] email</span> - [DESCRIPTION] research lead email',
+  '<span class="command">[NAME] cat [FILE_NAME]</span> - [DESCRIPTION] read file contents',
   '<span class="command">[NAME] cd [FOLDER_NAME|FILE_NAME]</span> - [DESCRIPTION] goto directory or file',
 
 ];
@@ -90,3 +92,18 @@ banner = [
 "INFO: check ...",
 "SHA CHK OK!",
 ];
+
+// root path
+welcome_message = ['Welcome to SERN, a company dedicated to advancing the field of time travel and changing the course of history. ',
+'As a member of our team, you will have the opportunity to work on cutting-edge research and development,',
+'utilizing the latest technologies and methodologies to push the boundaries of what is possible. ',
+'At SERN, we understand the importance of collaboration and teamwork,', 
+'and we encourage our employees to share their ideas and insights freely. ',
+'Together, we can unlock the secrets of time and space, and pave the way for a brighter future. ',
+'But with great power comes great responsibility. ',
+'We must be careful in our research and cautious in our actions,',
+'mindful of the consequences that our discoveries may bring. ',
+'We must use our knowledge and skills for the betterment of humanity, and never for personal gain. ',
+'As a member of SERN, you have the opportunity to shape the future in profound ways. ',
+"Let's work together to make that future a reality."];
+// end root path

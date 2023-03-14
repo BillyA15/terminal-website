@@ -9,6 +9,30 @@ const ENTER_KEY = 13;
 const ARROW_UP = 38;
 const ARROW_DOWN = 40;
 
+var files = ["1st_design", "skuld-files", "mail-system", "FutureGadgetLab", "gate_theory"];
+var designFiles = ["schematics.vec", "notes.txt"];
+var skuldFiles = ["operation_skuld.txt"];
+var mailFiles = ["d_mail_standard.txt"];
+var futureGadgetLab = ["phone_wave", "gate_theory"];
+
+var notes =["yeah this are some notes you know",];
+
+var dMailStandard = [
+"Test messages before sending: Since D-Mails ",
+"have the potential to change the course of events, ",
+"the user should test their message before sending",
+ "it to ensure that it will have the desired effect.\n",
+
+"Document message content and recipients: The user should keep detailed records of the content of each D-Mail sent, ",
+"as well as the recipients and the intended outcomes. This can help avoid confusion or unintended consequences down the line.",
+
+"Be aware of potential side effects: The user should be aware that sending a D-Mail may have unintended side effects, such as changing the memories or actions of other individuals. They should consider these potential side effects when deciding whether to send a message.",
+
+"Use D-Mail sparingly: Due to the potential consequences of changing the timeline, the user should use D-Mail sparingly and only when necessary. They should consider whether other methods of communication or problem-solving might be more appropriate before resorting to time travel.",
+
+"Be prepared for changes to the timeline: The user should be aware that sending a D-Mail may cause significant changes to the timeline and be prepared to adapt to these changes as needed. They should consider the potential impact on their own lives and relationships, as well as the broader consequences for society as a whole.",
+];
+
 var git = 0;
 var fillPasswordEnabled = false;
 let correctPassword = false;
@@ -34,12 +58,52 @@ function isPassword(){
   return false;
 }
 
-function getUser(){
+var current_path = "";
+var current_ls = ls;
+var available_cat_function = main_cat;
+
+function design_cat(file){
+  if("schematics.vec" === file){
+    return "89a7#9h4rt*fgyn()fASsdfSD&)(^T^)*(AfFG*&ADASR&^$%&adF*$*dfasd987qwt78^*";
+  }
+  else if("notes.txt" === file){
+    return "TODO add notes";
+  }
+  else{
+    return null;
+  }
+}
+
+function skuld_cat(file){
+  if("operation_skuld.txt" === file){
+    return "TODO add operation_skuld.txt";
+  }
+  else{
+    return null;
+  }
+}
+
+function main_cat(file){
+  if(file==="company_welcome.txt"){
+    return welcome_message;
+  }
+  else{
+    return null;
+  }
+}
+
+function setUserPath(){
 
   if(isRoot){
-    return "root@Evident#>";
+    return "root@Evident"+current_path+"#>";
   }
-  return "evident@Evident~$>";
+  return "evident@Evident"+current_path+"~$>";
+
+}
+
+function getUser(){
+
+  return setUserPath();
 
 }
 
@@ -93,15 +157,61 @@ function enterKey(e) {
 function commander(cmd) {
   //split command in space
   cd = cmd.split(" ")[0];
+  file = cmd.split(" ")[1];
   if (cd === "cd"){
     if(!isRoot){
       addLine("default user has no cd permissions, auth: su", "error", 0);
     }
     else{
+      // trim / from the end because the user might have typed it like that
+      if(file.endsWith("/")){
+        file = file.substring(0, file.length - 1);
+      }
+      else if(file === "1st_design"){
+        current_path = "/1st_design";
+        current_ls = designFiles;
+        available_cat_function = design_cat;
+        document.getElementById("liner").setAttribute("data-text", getUser());
+      }
+      else if(file === "skuld_files"){
+        current_path = "/skuld_files";
+        current_ls = skuldFiles;
+        available_cat_function = skuld_cat;
+        document.getElementById("liner").setAttribute("data-text", getUser());
+      }
+      else if(file == ".."){
+        current_path = "";
+        current_ls = ls;
+        available_cat_function = main_cat;
+        document.getElementById("liner").setAttribute("data-text", getUser());
+      }
+      else {
+        addLine("No such file", "error", 80);
+      }
+      /*
       setTimeout(function() {
         window.open('https://www.youtube.com/watch?v=dQw4w9WgXcQ');
-      }, 1000);
+      }, 1000);*/
    
+    }
+    return;
+  }else if(cd === "cat"){
+    if(!isRoot){
+      addLine("default user has no cat permissions, auth: su", "error", 0);
+    }
+    else{
+      if(file === undefined){
+        addLine("No file specified", "error", 0);
+      }
+      else{
+        var cat = available_cat_function(file);
+        if(cat === null){
+          loopLines("No such file or directory", "output", 80);
+        }
+        else{
+          loopLines(cat, "output", 80);
+        }
+      }
     }
     return;
   }
@@ -129,6 +239,10 @@ function commander(cmd) {
       }, 1000); */
       break;
     case "su":
+      if (isRoot) {
+        addLine("root is already authenticated", "output", 80);
+        break;
+      }
       liner.classList.add("password");
       fillPasswordEnabled = true;
       break;
@@ -138,7 +252,7 @@ function commander(cmd) {
       addLine("<br>", "command", 80 * commands.length + 50);
       break;
     case "email":
-      addLine('rotitNhoj@dmail.com', "color2", 80);
+      addLine('johntitor@dmail.com', "color2", 80);
       break;
     case "clear":
       setTimeout(function() {
@@ -160,7 +274,7 @@ function commander(cmd) {
       loopLines(hardinfo, "output", 100);
       break;
     case "ls":
-      loopLines(ls, "output", 100);
+      loopLines(current_ls, "output", 100);
       break;
     default:
       addLine("<span class=\"inherit\">Unrecognized Command "+cmd+". try <span class=\"command\">'help'</span>.</span>", "error", 0);
