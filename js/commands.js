@@ -130,5 +130,45 @@ notes = [
   "While the discovery of the time machine has been kept secret from the general public, SERN ",
   "has continued to push the boundaries of temporal research, with the ultimate goal of using ",
   "our knowledge to benefit humanity and shape a brighter future.",
-]
+];
+
+dMailStandard = [
+  "Test messages before sending: Since D-Mails ",
+  "have the potential to change the course of events, ",
+  "the user should test their message before sending",
+  "it to ensure that it will have the desired effect.",
+  "-------------------------------------------------",
+  "Document message content and recipients: The user should keep detailed records of the content of each D-Mail sent, ",
+  "as well as the recipients and the intended outcomes. This can help avoid confusion or unintended consequences down the line.",
+  "-------------------------------------------------",
+  "Be aware of potential side effects: The user should be aware ",
+  "that sending a D-Mail may have unintended side effects,",
+  "such as changing the memories or actions of other individuals. ",
+  "They should consider these potential side effects when deciding whether to send a message.",
+  "-------------------------------------------------",
+  "Use D-Mail sparingly: Due to the potential consequences of changing the timeline, ",
+  "the user should use D-Mail sparingly and only when necessary. ",
+  "They should consider whether other methods of communication or ",
+  "problem-solving might be more appropriate before resorting to time travel.",
+  "-------------------------------------------------",
+  "Be prepared for changes to the timeline: The user should be aware that sending a D-Mail may ",
+  "cause significant changes to the timeline and be prepared to adapt to these changes as needed. ",
+  "They should consider the potential impact on their own lives and relationships, ",
+  "as well as the broader consequences for society as a whole.",
+  ];
+  investigation = [
+  "The Future Gadget Club is a group of misguided and inexperienced young individuals",
+  " who are dabbling in science and technology they do not fully understand.",
+  "However, their accidental discovery of a time machine has caught our attention,",
+  "and we see it as a significant threat to our plans for the future of the world.",
+  "-------------------------------------------------",
+  "We have been monitoring the Future Gadget Club closely, gathering intelligence on their",
+  "every move and attempting to infiltrate their ranks. We know that they are a creative and",
+  " resourceful group, but we believe that they are no match for the power and influence of SERN.",
+  "-------------------------------------------------",
+  "Our primary goal is to capture the time machine and the technology behind it, as we see it ",
+  "as a tool that could be used to alter history and disrupt our carefully laid plans for the future.",
+  "We will stop at nothing to achieve this goal, and we are confident that our resources and",
+  "expertise will give us the upper hand in any confrontation with the Future Gadget Club.",
+  ];
 // end root path

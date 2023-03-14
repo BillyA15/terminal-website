@@ -13,23 +13,9 @@ var files = ["1st_design", "skuld-files", "mail-system", "FutureGadgetLab", "gat
 var designFiles = ["schematics.vec", "notes.txt"];
 var skuldFiles = ["operation_skuld.txt"];
 var mailFiles = ["d_mail_standard.txt"];
-var futureGadgetLab = ["phone_wave", "gate_theory"];
+var futureGadgetLab = ["investigation.txt"];
 
-var dMailStandard = [
-"Test messages before sending: Since D-Mails ",
-"have the potential to change the course of events, ",
-"the user should test their message before sending",
- "it to ensure that it will have the desired effect.\n",
 
-"Document message content and recipients: The user should keep detailed records of the content of each D-Mail sent, ",
-"as well as the recipients and the intended outcomes. This can help avoid confusion or unintended consequences down the line.",
-
-"Be aware of potential side effects: The user should be aware that sending a D-Mail may have unintended side effects, such as changing the memories or actions of other individuals. They should consider these potential side effects when deciding whether to send a message.",
-
-"Use D-Mail sparingly: Due to the potential consequences of changing the timeline, the user should use D-Mail sparingly and only when necessary. They should consider whether other methods of communication or problem-solving might be more appropriate before resorting to time travel.",
-
-"Be prepared for changes to the timeline: The user should be aware that sending a D-Mail may cause significant changes to the timeline and be prepared to adapt to these changes as needed. They should consider the potential impact on their own lives and relationships, as well as the broader consequences for society as a whole.",
-];
 
 var git = 0;
 var fillPasswordEnabled = false;
@@ -62,7 +48,7 @@ var available_cat_function = main_cat;
 
 function design_cat(file){
   if("schematics.vec" === file){
-    return ["89a7#9h4rt*fgyn()fASsdfSD&)(^T^)*(AfFG*&ADASR&^$%&adF*$*dfasd987qwt78^*",];
+    return ["failed to import vec file 89a7#9h4rt*fgyn()fASsdfSD&)(^T^)*(AfFG*&ADASR&^$%&adF*$*dfasd987qwt78^*",];
   }
   else if("notes.txt" === file){
     return notes;
@@ -72,9 +58,18 @@ function design_cat(file){
   }
 }
 
+function mail_cat(file){
+  if("d_mail_standard.txt" === file){
+    return dMailStandard;
+  }
+  else{
+    return null;
+  }
+}
+
 function skuld_cat(file){
   if("operation_skuld.txt" === file){
-    return "TODO add operation_skuld.txt";
+    return ["TODO add operation_skuld.txt",];
   }
   else{
     return null;
@@ -84,6 +79,15 @@ function skuld_cat(file){
 function main_cat(file){
   if(file==="company_welcome.txt"){
     return welcome_message;
+  }
+  else{
+    return null;
+  }
+}
+
+function gadget_club_cat(file){
+  if(file == "investigation.txt"){
+    return investigation;
   }
   else{
     return null;
@@ -175,6 +179,19 @@ function commander(cmd) {
         current_path = "/skuld_files";
         current_ls = skuldFiles;
         available_cat_function = skuld_cat;
+        document.getElementById("liner").setAttribute("data-text", getUser());
+      }
+      else if(file === "mail_system"){
+        current_path = "/mail_system";
+        current_ls = mailFiles;
+        available_cat_function = mail_cat;
+        document.getElementById("liner").setAttribute("data-text", getUser());
+      }
+      else if(file === "futuregadgetlab"){
+        current_path = "/FutureGadgetLab";
+        current_ls = futureGadgetLab;
+        console.log("entered here kldajf lkajds");
+        available_cat_function = gadget_club_cat;
         document.getElementById("liner").setAttribute("data-text", getUser());
       }
       else if(file == ".."){
