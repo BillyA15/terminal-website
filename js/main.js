@@ -15,8 +15,6 @@ var skuldFiles = ["operation_skuld.txt"];
 var mailFiles = ["d_mail_standard.txt"];
 var futureGadgetLab = ["phone_wave", "gate_theory"];
 
-var notes =["yeah this are some notes you know",];
-
 var dMailStandard = [
 "Test messages before sending: Since D-Mails ",
 "have the potential to change the course of events, ",
@@ -64,10 +62,10 @@ var available_cat_function = main_cat;
 
 function design_cat(file){
   if("schematics.vec" === file){
-    return "89a7#9h4rt*fgyn()fASsdfSD&)(^T^)*(AfFG*&ADASR&^$%&adF*$*dfasd987qwt78^*";
+    return ["89a7#9h4rt*fgyn()fASsdfSD&)(^T^)*(AfFG*&ADASR&^$%&adF*$*dfasd987qwt78^*",];
   }
   else if("notes.txt" === file){
-    return "TODO add notes";
+    return notes;
   }
   else{
     return null;
@@ -201,12 +199,12 @@ function commander(cmd) {
     }
     else{
       if(file === undefined){
-        addLine("No file specified", "error", 0);
+        addLine("No file specified", "error", 80);
       }
       else{
         var cat = available_cat_function(file);
         if(cat === null){
-          loopLines("No such file or directory", "output", 80);
+          addLine("No such file in system", "error", 80);
         }
         else{
           loopLines(cat, "output", 80);

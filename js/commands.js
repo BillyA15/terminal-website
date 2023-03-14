@@ -106,4 +106,29 @@ welcome_message = ['Welcome to SERN, a company dedicated to advancing the field 
 'We must use our knowledge and skills for the betterment of humanity, and never for personal gain. ',
 'As a member of SERN, you have the opportunity to shape the future in profound ways. ',
 "Let's work together to make that future a reality."];
+
+notes = [
+  "As a leading research institution dedicated to advancing the field of time travel, SERN was ",
+  "ecstatic to discover the first functional time machine. The machine was discovered by our",
+  "team of scientists during a series of experiments involving high-energy particle collisions",
+  "and quantum entanglement.",
+
+  "The machine operates by creating a localized temporal field using a complex network of ",
+  "superconducting magnets and exotic materials, such as tritium and negative mass particles. ",
+  "By carefully controlling the energy levels and temporal gradients within the field, the ",
+  "machine is able to transport matter and energy across temporal boundaries.",
+
+  "Our team of scientists quickly realized the immense potential of the time machine for both ",
+  "scientific research and military applications. Initial experiments demonstrated the machine's",
+  "ability to send objects and individuals back in time, allowing us to study historical events",
+  "firsthand and even alter the course of history.",
+
+  "Further refinements to the machine allowed us to explore different possible timelines and ",
+  "alternate universes, opening up a whole new field of research into the nature of time and",
+  "space.",
+
+  "While the discovery of the time machine has been kept secret from the general public, SERN ",
+  "has continued to push the boundaries of temporal research, with the ultimate goal of using ",
+  "our knowledge to benefit humanity and shape a brighter future.",
+]
 // end root path
