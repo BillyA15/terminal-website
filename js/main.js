@@ -186,6 +186,10 @@ function commander(cmd) {
     }
     else{
       // trim / from the end because the user might have typed it like that
+      if (file == undefined){
+        addLine("missing file operand", "error", 0);
+        return;
+      }
       if(file.endsWith("/")){
         file = file.substring(0, file.length - 1);
       }
