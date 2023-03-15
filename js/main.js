@@ -139,7 +139,7 @@ function enterKey(e) {
     command.innerHTML = et.repeat(w);
     if (e.keyCode == ENTER_KEY) {
       if (isPassword()){
-        loopLines(secret, "color2 margin", 120);
+        loopLines(secret, "output", 120);
         document.getElementById("liner").setAttribute("data-text", getUser());
       }else{
         addLine("Wrong password", "error", 0);
@@ -227,7 +227,7 @@ function commander(cmd) {
         document.getElementById("liner").setAttribute("data-text", getUser());
       }
       else if(file === "@channel"){
-        addLine("DMAIL: request #$O&*3453w. This Directory is directly connected to the d-mail service and <br> viewing it's contents can and will alter", "error", 80);
+        addLine("DMAIL: request #$O&*3453w. This communication channel is directly connected to the d-mail service and <br> viewing it's contents can and will alter", "error", 80);
         addLine(" the current time continuum.<br> Only SERN executive members have view access.", "error", 80);
       }
       else if(file === "operation_skuld"){
@@ -241,7 +241,7 @@ function commander(cmd) {
         document.getElementById("liner").setAttribute("data-text", getUser());
       }
       else {
-        addLine("No such file", "error", 80);
+        addLine("No such directory", "error", 80);
       }
       /*
       setTimeout(function() {
@@ -302,9 +302,9 @@ function commander(cmd) {
       fillPasswordEnabled = true;
       break;
     case "history":
-      addLine("<br>", "", 0);
-      loopLines(commands, "color2", 80);
-      addLine("<br>", "command", 80 * commands.length + 50);
+      //addLine("<br>", "", 0);
+      loopLines(commands, "output", 80);
+      //addLine("<br>", "command", 80 * commands.length + 50);
       break;
     case "email":
       addLine('johntitor@dmail.com', "color2", 80);
@@ -316,6 +316,7 @@ function commander(cmd) {
       }, 1);
       break;
     case "database":
+      commander("default");// this command is not available to the default user for now
       if (!isRoot) {
         commander("default");
         break;

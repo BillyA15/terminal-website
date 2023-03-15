@@ -42,7 +42,7 @@ whoami = [
 
 secret = [
 
-  'you now have access to [NAME] database [DESCRIPTION] connects to database',
+  'welcome system administrator',
 
 ];
 
@@ -59,12 +59,13 @@ help = [
   '<span class="command">[NAME] su</span> - [DESCRIPTION] root user auth',
   '<span class="command">[NAME] ls</span> - [DESCRIPTION] list directories',
   '<span class="command">[NAME] clear</span> - [DESCRIPTION] clear terminal',
-  '<span class="command">[INPUT] ARROW_KEY_UP | ARROW KEY DOWN</span> - [DESCRIPTION] scroll through command history',
+  '<span class="command">[INPUT] ARROW_KEY_UP | ARROW_KEY_DOWN</span> - [DESCRIPTION] scroll through command history',
+  '<span class="command">[INPUT] ARROW_KEY_LEFT | ARROW_KEY_RIGHT</span> - [DESCRIPTION] partially working inplace editing',
   '<span class="command">[NAME] history</span> - [DESCRIPTION] list command history',
   '<span class="command">[NAME] spec</span> - [DESCRIPTION] specifications',
   '<span class="command">[NAME] email</span> - [DESCRIPTION] research lead email',
   '<span class="command">[NAME] cat [FILE_NAME]</span> - [DESCRIPTION] read file contents',
-  '<span class="command">[NAME] cd [FOLDER_NAME|FILE_NAME]</span> - [DESCRIPTION] goto directory or file',
+  '<span class="command">[NAME] cd [FOLDER_NAME|..]</span> - [DESCRIPTION] goto directory or parent directory',
 
 ];
 
