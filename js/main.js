@@ -14,7 +14,8 @@ var designFiles = ["schematics.vec", "notes.txt"];
 var skuldFiles = ["operation_skuld.txt"];
 var mailFiles = ["d_mail_standard.txt"];
 var futureGadgetLab = ["investigation.txt"];
-
+var phone_wave = ["research.txt", "schematic_overview.txt"];
+var gate_theory = ["gate_theory.txt"];
 
 
 var git = 0;
@@ -94,6 +95,25 @@ function gadget_club_cat(file){
   }
 }
 
+function phone_wave_cat(file){
+  if(file == "research.txt"){
+    return research;
+  }
+  else if(file == "schematic_overview.txt"){
+    return schematic_overview;
+  }
+  else{
+    return null;
+  }
+}
+function gate_theory_cat(file){
+  if(file == "gate_theory.txt"){
+    return theory;
+  }
+  else{
+    return null;
+  }
+}
 function setUserPath(){
 
   if(isRoot){
@@ -169,7 +189,7 @@ function commander(cmd) {
       if(file.endsWith("/")){
         file = file.substring(0, file.length - 1);
       }
-      else if(file === "1st_design"){
+      if(file === "1st_design"){
         current_path = "/1st_design";
         current_ls = designFiles;
         available_cat_function = design_cat;
@@ -193,6 +213,26 @@ function commander(cmd) {
         console.log("entered here kldajf lkajds");
         available_cat_function = gadget_club_cat;
         document.getElementById("liner").setAttribute("data-text", getUser());
+      }
+      else if(file === "phone_wave"){
+        current_path = "/phone_wave";
+        current_ls = phone_wave;
+        available_cat_function = phone_wave_cat;
+        document.getElementById("liner").setAttribute("data-text", getUser());
+      }
+      else if(file === "gate_theory"){
+        current_path = "/gate_theory";
+        current_ls = gate_theory;
+        available_cat_function = gate_theory_cat;
+        document.getElementById("liner").setAttribute("data-text", getUser());
+      }
+      else if(file === "@channel"){
+        addLine("DMAIL: request #$O&*3453w. This Directory is directly connected to the d-mail service and <br> viewing it's contents can and will alter", "error", 80);
+        addLine(" the current time continuum.<br> Only SERN executive members have view access.", "error", 80);
+      }
+      else if(file === "operation_skuld"){
+        addLine("DMAIL: request #$(b*34h%*U@. The events described in this directory have not yet concluded with a favorable outcome<br>", "error", 80);
+        addLine("viewing the files can and will make the search efforts increasingly more difficult.<br> Only SERN executive members have view access.", "error", 80);
       }
       else if(file == ".."){
         current_path = "";
